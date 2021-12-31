@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/noha-dream/static/css/main.2188c49b.css",
+    "main.js": "/noha-dream/static/js/main.f0ed23cb.js",
+    "static/media/bg_video.MP4": "/noha-dream/static/media/bg_video.a08ec4cc0819285d433f.MP4",
+    "static/media/fond1.JPG": "/noha-dream/static/media/fond1.d94d050451d7e8c494cf.JPG",
+    "static/media/Humble.otf": "/noha-dream/static/media/Humble.84f8c7b9eb36b4acd3f4.otf",
+    "static/media/sora-all-400-normal.woff": "/noha-dream/static/media/sora-all-400-normal.fc2a204a844d60c30272.woff",
+    "static/media/sora-latin-400-normal.woff2": "/noha-dream/static/media/sora-latin-400-normal.5be02e543277b2b97d38.woff2",
+    "static/media/sora-latin-ext-400-normal.woff2": "/noha-dream/static/media/sora-latin-ext-400-normal.b6e3517b818e007ea289.woff2",
+    "index.html": "/noha-dream/index.html",
+    "main.2188c49b.css.map": "/noha-dream/static/css/main.2188c49b.css.map",
+    "main.f0ed23cb.js.map": "/noha-dream/static/js/main.f0ed23cb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2188c49b.css",
+    "static/js/main.f0ed23cb.js"
+  ]
+}
