@@ -1,0 +1,29 @@
+@media screen and (max-width: 639px) {
+    .text-mb {
+        font-size: 2rem;
+    }
+
+    .flexColumn {
+        flex-direction: column;
+    }
+
+    .marginBottom10 {
+        margin-bottom: 10px;
+    }
+
+    .marginBottom20 {
+        margin-bottom: 20px;
+    }
+
+    .marginBottom30 {
+        margin-bottom: 30px;
+    }
+
+    .textCenter {
+        text-align: center;
+    }
+}
+
+.marginAuto {
+    margin: 0 auto;
+}

@@ -1,0 +1,78 @@
+.backgroundHeader {
+    background-image: url('../../Assets/Images/fond1.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.filigram {
+    top: 0;
+    width: 100%;
+    background-color: rgb(0 0 0 / 30%);
+    position: absolute;
+}
+
+.HeaderHeight {
+    height: 975px;
+}
+
+@font-face {
+    font-family: 'Humble';
+    src: url('../../Assets/Fonts/Humble.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (max-width: 500px) {
+    .logo {
+        height: 75px;
+        line-height: 75px;
+        font-size: 4rem;
+    }
+
+    .hrPerso {
+        border-top-width: 5px;
+    }
+    
+    .sousLogo {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (min-width: 501px) {
+    .logo {
+        height: 115px;
+        line-height: 115px;
+        font-size: 6rem;
+    }
+    
+    .hrPerso {
+        border-top-width: 10px;
+        margin: 10px 0 10px 0;
+    }
+    
+    .sousLogo {
+        font-size: 2rem;
+    }
+}
+
+.logo {
+    font-family: 'Humble';
+}
+
+.hrPerso {
+    margin: 10px 0 10px 0;
+}
+
+
+.indicationHeader {
+    z-index: 10;
+}
+
+.chevronDownHeader {
+    position: relative;
+    color: white;
+    height: 80px;
+    width: 200px;
+    bottom: 80px;
+    margin: 0 auto;
+    cursor: pointer;
+}

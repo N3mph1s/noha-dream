@@ -1,0 +1,53 @@
+.navActive {
+    background-color: white;
+    color: black;
+    padding: 0 7px;
+    border-radius: 6px;
+    font-weight: 400;
+    font-stretch: 100%;
+}
+
+.navBarActive {
+    background-color: rgb(24 24 27);
+}
+
+.navBarNotActive {
+    background-color: none;
+}
+
+.navBarActive, .navBarNotActive, .leftMenuMobile {
+    transition: all 0.5s;
+}
+
+.leftMenuMobile {
+    width: 110%;
+    background-color: rgb(24 24 27);
+    height: calc(100vh + 1px);
+    top: 0;
+    position: absolute;
+    right: 0px;
+    left: -10px;
+}
+
+.leftMenuMobile > ul {
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+.btnMenuMobile {
+    z-index: 1;
+    color: white;
+}
+
+.borderMenuMobile {
+    margin: 15px auto;
+    border-top-width: 2px;
+    width: 15%;
+}
