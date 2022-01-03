@@ -99,6 +99,19 @@ export default function Navbar() {
                                             Contact
                                         </Link>
                                     </li>
+                                    <li>
+                                        <Link
+                                            onClick={toggleNavMenu}
+                                            to='infos'
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-50}
+                                            duration={500} 
+                                            key={uuidv4()}
+                                        >
+                                            Informations
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         }
@@ -144,6 +157,16 @@ export default function Navbar() {
                                         duration={500} 
                                         key={uuidv4()}>
                                         <span style={{ fontSize: 18, cursor:'pointer' }}>Contact</span>
+                                    </Link>
+                                    <Link
+                                        to="infos"
+                                        activeClass="navActive"
+                                        spy={true}
+                                        smooth={true}
+                                        offset={-50}
+                                        duration={500} 
+                                        key={uuidv4()}>
+                                        <span style={{ fontSize: 18, cursor:'pointer' }}>Informations</span>
                                     </Link>
                                 </div>
                             </div>

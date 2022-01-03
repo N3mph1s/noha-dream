@@ -5,10 +5,10 @@ import './Plan.css'
 export default function Plan() {
     return (
         <>
-            <div id='contact' className="py-12 bg-stone-100 blockPage">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div id='infos' className="py-12 bg-zinc-900 blockPage">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
                     <div className="lg:mt-20 md:mt-20 sm:mt-10">
-                        <h1 className='uppercase lg:text-6xl md:text-4xl text-mb font-semibold'>Contact</h1>
+                        <h1 className='uppercase lg:text-6xl md:text-4xl text-mb font-semibold'>Informations</h1>
                     </div>
                     <div className='mt-20'>
                         <h1 className='uppercase text-4xl underline underline-offset-4'>Téléphone</h1>
