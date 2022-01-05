@@ -1,7 +1,12 @@
 .backgroundHeader {
     background-image: url('../../Assets/Images/fond1.JPG');
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+
+@supports not (-webkit-touch-callout: none) {
+    .backgroundHeader{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
 .filigram {

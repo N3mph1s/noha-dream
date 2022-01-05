@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import React, { useState, useEffect, useRef } from 'react'
 import './Form.css'
+import emailjs from '@emailjs/browser'
 
 export default function Form() {
 
+    const form = useRef();
+
     const [formValues, setFormValues] = useState({
+        nom: "",
+        prenom: "",
         email: "",
         phone: "",
         demandes: ""
@@ -16,11 +20,6 @@ export default function Form() {
         e.preventDefault();
         setFormErrors(validate(formValues))
         setIsSubmit(true)
-        setFormValues({
-            email: "",
-            phone: "",
-            demandes: ""
-        })
     }
 
     const handleChange = (e) => {
@@ -30,14 +29,32 @@ export default function Form() {
 
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues)
+            emailjs.sendForm('gmail', 'nohadream', form.current, 'user_nHL18EaO0vfeuRlIgPKjg')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
+                });
+            setFormValues({
+                nom: "",
+                prenom: "",
+                email: "",
+                phone: "",
+                demandes: ""
+            })
         }
-    }, [formErrors, formValues, isSubmit])
+    }, [formErrors, isSubmit])
 
     const validate = (values) => {
         const errors = {}
         const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
         const regexPhone = /^((\+)33|0)[1-9](\d{2}){4}$/g
+
+        if (!values.nom)
+            errors.nom = "Votre nom est requis!"
+
+        if (!values.prenom)
+            errors.prenom = "Votre prénom est requis!"
 
         if (!values.email)
             errors.email = "Email requis!"
@@ -62,7 +79,7 @@ export default function Form() {
                     <div className="lg:mt-20 md:mt-20 sm:mt-10 text-center">
                         <h1 className='uppercase lg:text-6xl md:text-4xl text-mb font-semibold'>Contact</h1>
                     </div>
-                    <form action="#" onSubmit={handleSubmit} method="POST" className='mt-20'>
+                    <form ref={form} onSubmit={handleSubmit} className='mt-20'>
                         {
                             (Object.keys(formErrors).length === 0 && isSubmit)
                                 ?
@@ -80,7 +97,7 @@ export default function Form() {
                                 <select
                                     className='drop-shadow-md'
                                     name="choose"
-                                    id={uuidv4()}
+                                    id="choose"
                                     placeholder='Votre demande'
                                     onChange={handleChange}
                                 >
@@ -88,11 +105,37 @@ export default function Form() {
                                     <option id='2' value="Demande de rendez-vous">Demande de rendez-vous</option>
                                 </select>
                             </label>
+                            <label htmlFor="nom">
+                                Nom* :
+                                <input
+                                    className='drop-shadow-md'
+                                    id="nom"
+                                    name="nom"
+                                    type="text"
+                                    placeholder='Doe'
+                                    value={formValues.nom}
+                                    onChange={handleChange}
+                                />
+                                <span className='error'>{formErrors.nom}</span>
+                            </label>
+                            <label htmlFor="prenom">
+                                Prénom* :
+                                <input
+                                    className='drop-shadow-md'
+                                    id="prenom"
+                                    name="prenom"
+                                    type="text"
+                                    placeholder='Jhon'
+                                    value={formValues.prenom}
+                                    onChange={handleChange}
+                                />
+                                <span className='error'>{formErrors.prenom}</span>
+                            </label>
                             <label htmlFor="email">
                                 E-mail* :
                                 <input
                                     className='drop-shadow-md'
-                                    id={uuidv4()}
+                                    id="email"
                                     name="email"
                                     type="text"
                                     placeholder='nohadream@mail.com'
@@ -105,7 +148,7 @@ export default function Form() {
                                 Téléphone* :
                                 <input
                                     className='drop-shadow-md'
-                                    id={uuidv4()}
+                                    id="phone"
                                     name="phone"
                                     type="text"
                                     maxLength={10}
@@ -119,7 +162,7 @@ export default function Form() {
                                 Demande(s)* :
                                 <textarea
                                     className='drop-shadow-md'
-                                    id={uuidv4()}
+                                    id="demandes"
                                     name="demandes"
                                     cols="30"
                                     rows="10"

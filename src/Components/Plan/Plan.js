@@ -14,7 +14,7 @@ export default function Plan() {
                         <h1 className='uppercase text-4xl underline underline-offset-4'>Téléphone</h1>
                         <div className='mt-10 items-center'>
                             <p className='textContact'>
-                                07.45.42.00.00
+                                07.45.43.74.80
                             </p>
                         </div>
                     </div>
